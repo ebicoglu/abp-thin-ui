@@ -1,0 +1,20 @@
+{
+  "schema": {
+    "primary": { "type": "string", "description": "Primary brand color (hex or CSS value)" },
+    "accent": { "type": "string", "description": "Accent color" },
+    "radius": { "type": "string", "description": "Border radius (e.g. 0.5rem)" },
+    "fontSans": { "type": "string", "description": "Sans-serif font family" },
+    "appName": { "type": "string", "description": "Application display name" }
+  },
+  "defaults": {
+    "primary": "#3b82f6",
+    "accent": "#22c55e",
+    "radius": "0.5rem",
+    "fontSans": "Inter, sans-serif",
+    "appName": "MyApp"
+  },
+  "presets": {
+    "modern": { "primary": "#0ea5e9", "accent": "#06b6d4", "fontSans": "Inter, sans-serif" },
+    "elegant": { "primary": "#6366f1", "accent": "#8b5cf6", "fontSans": "Georgia, serif" }
+  }
+}

@@ -46,15 +46,6 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## ABP Thin UI
-
-This template is transformer-ready for the **abp-ui** CLI. From the repo root you can run:
-
-- `dotnet run --project ui-scaffolding-generator-cli -- init <targetDir>` to copy this template.
-- From the new project: `abp-ui transform --layout=topnav` to switch layout or apply branding.
-
-To connect to an ABP backend, copy `.env.example` to `.env` and set `VITE_ABP_API_URL` to your HttpApi.Host URL (e.g. `https://localhost:44317`).
-
 ## What technologies are used for this project?
 
 This project is built with:

@@ -1,0 +1,4 @@
+{
+  "sidebar": "src/app-shell/layouts/sidebar/SidebarShell.tsx",
+  "topnav": "src/app-shell/layouts/topnav/TopNavShell.tsx"
+}
