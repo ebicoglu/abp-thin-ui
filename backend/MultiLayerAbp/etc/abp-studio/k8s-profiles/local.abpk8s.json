@@ -1,0 +1,10 @@
+{
+  "config": {
+    "context": "docker-desktop",
+    "namespace": "multilayerabp-local"
+  },
+  "metadata": {
+    "dotnetEnvironment": "Staging"
+  },
+  "services": {}
+}

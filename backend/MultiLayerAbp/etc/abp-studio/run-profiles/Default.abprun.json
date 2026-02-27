@@ -1,0 +1,32 @@
+﻿{
+  "applications": {
+    "MultiLayerAbp.HttpApi.Host": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44317",
+      "path": "../../../src/MultiLayerAbp.HttpApi.Host/MultiLayerAbp.HttpApi.Host.csproj",
+      "kubernetesService": ".*-httpapihost$",
+      "healthCheckEndpoint": "/health-status",
+      "healthUiEndpoint": "/health-ui",
+      "execution": {
+        "order": 4
+      }
+    }
+  },
+  "containers": {
+    "serviceName": "MultiLayerAbp-Containers",
+  },
+  "tasks":{
+    "Initialize Solution":{
+      "behaviour": 2,
+      "startCommand": "./initialize-solution.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Installs required UI libraries, creates required certificates and seeds the database."
+    },
+    "Migrate Database":{
+      "behaviour": 0,
+      "startCommand": "./migrate-database.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Migrates the database to the latest version."
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>MultiLayerAbp</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'MultiLayerAbp.HttpApi.Host' " />
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="9.0.0" />
+    <PackageReference Include="KubernetesClient" Version="18.0.5"/>
+    <PackageReference Include="IdentityModel" Version="7.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.Async" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="10.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="10.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Serilog" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Swashbuckle" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.OpenIddict" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Account.Pro.Public.Web.Impersonation" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MultiLayerAbp.Application\MultiLayerAbp.Application.csproj" />
+    <ProjectReference Include="..\MultiLayerAbp.HttpApi\MultiLayerAbp.HttpApi.csproj" />
+    <ProjectReference Include="..\MultiLayerAbp.EntityFrameworkCore\MultiLayerAbp.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Studio.Client.AspNetCore" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup Condition="Exists('./openiddict.pfx')">
+    <None Remove="openiddict.pfx" />
+    <EmbeddedResource Include="openiddict.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>

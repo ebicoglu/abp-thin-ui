@@ -1,0 +1,4 @@
+image:
+  repository: "multilayerabp/httpapihost"
+  tag: "latest"
+  pullPolicy: IfNotPresent

@@ -1,0 +1,11 @@
+global:
+  hosts:
+    dbmigrator: "[RELEASE_NAME]-dbmigrator"
+    httpapi: "[RELEASE_NAME]-httpapihost"
+  connectionStrings:
+    default: "Server=[RELEASE_NAME]-sqlserver,1433; Database=MultiLayerAbp; User Id=sa; Password=myPassw@rd; TrustServerCertificate=True"
+  dotnetEnvironment: "Staging"
+  disablePII: "false"
+  stringEncryptionDefaultPassPhrase: "WBKvS1jzjegEW9F5"
+  abpStudioClient:
+    isLinkEnabled: "true"

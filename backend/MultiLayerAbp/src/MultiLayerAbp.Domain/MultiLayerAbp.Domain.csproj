@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>MultiLayerAbp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MultiLayerAbp.Domain.Shared\MultiLayerAbp.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Identity" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Domain.OpenIddict" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.BlobStoring.Database.Domain" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.OpenIddict.Pro.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Identity.Pro.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Commercial.SuiteTemplates" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.LanguageManagement.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Saas.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.TextTemplateManagement.Domain" Version="10.1.0" />
+    <PackageReference Include="Volo.Abp.Gdpr.Domain" Version="10.1.0" />
+
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+{
+  "production": true,
+  "application": {
+    "baseUrl":"http://localhost:4200",
+    "name": "MultiLayerAbp",
+    "logoUrl": ""
+  },
+  "oAuthConfig": {
+    "issuer": "https://localhost:44317/",
+    "redirectUri": "http://localhost:4200",
+    "clientId": "MultiLayerAbp_App",
+    "responseType": "code",
+    "scope": "offline_access openid profile email phone MultiLayerAbp"
+  },
+  "apis": {
+    "default": {
+      "url": "https://localhost:44317",
+      "rootNamespace": "MultiLayerAbp"
+    },
+    "AbpAccountPublic": {
+      "url": "https://localhost:44317",
+      "rootNamespace": "AbpAccountPublic"
+    }
+  }
+}

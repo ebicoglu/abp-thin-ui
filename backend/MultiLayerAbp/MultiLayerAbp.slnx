@@ -1,0 +1,23 @@
+<Solution>
+    <Configurations>
+        <Platform Name="Any CPU" />
+    </Configurations>
+    <Folder Name="/src/">
+        <Project Path="src/MultiLayerAbp.Domain/MultiLayerAbp.Domain.csproj" />
+        <Project Path="src/MultiLayerAbp.Application/MultiLayerAbp.Application.csproj" />
+        <Project Path="src/MultiLayerAbp.EntityFrameworkCore/MultiLayerAbp.EntityFrameworkCore.csproj" />
+        <Project Path="src/MultiLayerAbp.Domain.Shared/MultiLayerAbp.Domain.Shared.csproj" />
+        <Project Path="src/MultiLayerAbp.Application.Contracts/MultiLayerAbp.Application.Contracts.csproj" />
+        <Project Path="src/MultiLayerAbp.HttpApi/MultiLayerAbp.HttpApi.csproj" />
+        <Project Path="src/MultiLayerAbp.HttpApi.Client/MultiLayerAbp.HttpApi.Client.csproj" />
+        <Project Path="src/MultiLayerAbp.DbMigrator/MultiLayerAbp.DbMigrator.csproj" />
+        <Project Path="src/MultiLayerAbp.HttpApi.Host/MultiLayerAbp.HttpApi.Host.csproj" />
+    </Folder>
+    <Folder Name="/test/">
+        <Project Path="test/MultiLayerAbp.Application.Tests/MultiLayerAbp.Application.Tests.csproj" />
+        <Project Path="test/MultiLayerAbp.EntityFrameworkCore.Tests/MultiLayerAbp.EntityFrameworkCore.Tests.csproj" />
+        <Project Path="test/MultiLayerAbp.TestBase/MultiLayerAbp.TestBase.csproj" />
+        <Project Path="test/MultiLayerAbp.Domain.Tests/MultiLayerAbp.Domain.Tests.csproj" />
+        <Project Path="test/MultiLayerAbp.HttpApi.Client.ConsoleTestApp/MultiLayerAbp.HttpApi.Client.ConsoleTestApp.csproj" />
+    </Folder>
+</Solution>
