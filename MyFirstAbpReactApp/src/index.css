@@ -49,10 +49,10 @@
     --font-body: 'Inter', sans-serif;
 
     /* @abp-brand:start */
-    --brand-primary: 220 70% 50%;
+    --brand-primary: 262 83% 58%;
     --brand-accent: 220 15% 92%;
-    --radius: 0.5rem;
-    --font-sans: 'Inter', sans-serif;
+    --radius: 0.75rem;
+    --font-sans: DM Sans;
     /* @abp-brand:end */
   }
 

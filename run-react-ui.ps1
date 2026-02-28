@@ -1,3 +1,3 @@
 cd MyFirstAbpReactApp
-run.ps1
+./run.ps1
 
