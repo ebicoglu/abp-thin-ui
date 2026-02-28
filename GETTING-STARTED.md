@@ -31,6 +31,20 @@ dotnet run --project ..\ui-scaffolding-generator-cli -- transform --layout=topna
 ```
 Skip this to keep the default sidebar layout.
 
+**Transform – all parameters (run from repo root):**
+```powershell
+dotnet run --project ui-scaffolding-generator-cli -- transform `
+  --project MyFirstAbpReactApp `
+  --layout topnav `
+  --primary "262 83% 58%" `
+  --accent "220 15% 92%" `
+  --radius "0.75rem" `
+  --font-sans "DM Sans" `
+  --app-name "My App" `
+  --logo "public/placeholder.svg"
+```
+Or use the script: `.\run-transform-test.ps1`
+
 **5. Install dependencies and start the dev server**
 ```powershell
 npm install
