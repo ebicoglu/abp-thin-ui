@@ -1,0 +1,12 @@
+{
+  "Layout": "topnav",
+  "Brand": {
+    "Primary": "46 100% 50%",
+    "Accent": "44 100% 96%",
+    "Radius": "1.5rem",
+    "FontSans": "Speedee, Arial, Helvetica, sans-serif",
+    "AppName": "McDonald\u0027s",
+    "LogoPath": "/logo.ico"
+  },
+  "AppliedAt": "2026-02-28T01:28:21.7084031Z"
+}

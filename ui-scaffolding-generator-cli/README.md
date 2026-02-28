@@ -1,11 +1,24 @@
-# ABP Thin UI CLI (abp-ui)
+# ABP Factory
 
-Template transformer CLI for the ABP Thin UI base template (Vite + React). Built with C# and Spectre.Console.Cli.
+CLI for the ABP Thin UI base template (Vite + React). Built with C# and Spectre.Console.Cli. Supports an interactive AI-assisted flow via the [GitHub Copilot SDK](https://github.com/github/copilot-sdk) (BYOK: use your own OpenAI API key).
 
 ## Commands
 
 - **init** – Scaffold the base UI template into a folder.
 - **transform** – Apply layout and branding to a project created with `init`.
+- **config** – Show or set configuration (e.g. OpenAI API key for AI-assisted design).
+
+## Interactive mode (no arguments)
+
+If you run `abp-factory` with no arguments, you get:
+
+**"Let's build something. Tell me what'd you like to build today?"**
+
+1. **Design based on an existing web site** – Describe the site you want (e.g. "apple.com.tr gibi bir site"). The CLI uses the Copilot SDK with your OpenAI API key to analyze your request, optionally fetch the URL to extract styles, and generate a similar React UI (runs `abp-factory init` and `abp-factory transform` with inferred parameters).
+2. **Design from an existing Figma project** – Paste a Figma file link in the form `https://www.figma.com/file/XXXXXXXXXXXX/Project-Name`. The AI infers design direction from the project and runs `abp-factory init` and `abp-factory transform` with matching parameters.
+3. **Choose your custom design** – You are prompted for all options (target folder, layout, logo, primary/accent colors, radius, font, app name, backend path); then the project is created and transformed.
+
+For options 1 and 2 you must set an OpenAI API key (see **Config** below).
 
 ## Usage
 
@@ -35,6 +48,19 @@ cd new-app
 dotnet run --project ../ui-scaffolding-generator-cli -- transform --layout=topnav --primary=#22c55e
 ```
 
+## Config (OpenAI API key for AI-assisted design)
+
+To use **Design based on an existing web site**, set your OpenAI API key:
+
+```bash
+abp-factory config --set-openai-key
+# You will be prompted to enter the key (sk-...). It is stored in your user config folder.
+```
+
+Or set one of these environment variables: `ABP_UI_OPENAI_API_KEY` or `OPENAI_API_KEY`.
+
+Config file location: `%APPDATA%\abp-factory\settings.json` (Windows) or `~/.config/abp-factory/settings.json` (Linux/macOS).
+
 ## Transform options
 
 | Option        | Description                    |
@@ -51,5 +77,5 @@ dotnet run --project ../ui-scaffolding-generator-cli -- transform --layout=topna
 
 ```bash
 dotnet publish -c Release -o ./publish
-# Run: ./publish/abp-ui.exe init my-app
+# Run: ./publish/abp-factory.exe init my-app
 ```

@@ -18,7 +18,7 @@ public sealed class TransformCommand : Command<TransformSettings>
         var appShellDir = Path.Combine(projectRoot, "src", "app-shell");
         if (!File.Exists(packageJson) || !Directory.Exists(appShellDir))
         {
-            AnsiConsole.MarkupLine("[red]Not a transformer-ready project.[/] Run from a folder created with [yellow]abp-ui init[/], or use [yellow]--project <path>[/].");
+            AnsiConsole.MarkupLine("[red]Not a transformer-ready project.[/] Run from a folder created with [yellow]abp-factory init[/], or use [yellow]--project <path>[/].");
             return 1;
         }
 

@@ -22,13 +22,23 @@ public sealed class TransformOrchestrator
                 Accent = brand.Accent,
                 Radius = brand.Radius,
                 FontSans = brand.FontSans,
-                AppName = brand.AppName
+                AppName = brand.AppName,
+                LogoPath = brand.LogoPath
             },
             AppliedAt = DateTime.UtcNow.ToString("O")
         };
 
         var json = System.Text.Json.JsonSerializer.Serialize(applied, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(appliedPath, json);
+
+        var publicDir = Path.Combine(projectRoot, "public");
+        if (Directory.Exists(publicDir))
+        {
+            var brandJsonPath = Path.Combine(publicDir, "brand.json");
+            var brandForApp = new { appName = brand.AppName ?? "My App", logo = brand.LogoPath };
+            var brandJson = System.Text.Json.JsonSerializer.Serialize(brandForApp, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(brandJsonPath, brandJson);
+        }
     }
 
     private sealed class AppliedManifest
@@ -45,5 +55,6 @@ public sealed class TransformOrchestrator
         public string Radius { get; set; } = "";
         public string? FontSans { get; set; }
         public string? AppName { get; set; }
+        public string? LogoPath { get; set; }
     }
 }

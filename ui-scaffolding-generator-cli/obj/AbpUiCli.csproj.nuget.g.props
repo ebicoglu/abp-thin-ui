@@ -13,4 +13,7 @@
     <SourceRoot Include="C:\Users\alper\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)github.copilot.sdk\0.1.29\build\GitHub.Copilot.SDK.props" Condition="Exists('$(NuGetPackageRoot)github.copilot.sdk\0.1.29\build\GitHub.Copilot.SDK.props')" />
+  </ImportGroup>
 </Project>
