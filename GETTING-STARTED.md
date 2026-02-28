@@ -14,10 +14,11 @@ Use these steps to create and run your first app (e.g. **MyFirstAbpReactApp**) w
 cd D:\github\alper\abp-thin-ui
 ```
 
-**2. Create the app from the base template**
+**2. Create the app and connect it to your ABP backend**
 ```powershell
-dotnet run --project ui-scaffolding-generator-cli -- init MyFirstAbpReactApp
+dotnet run --project ui-scaffolding-generator-cli -- init MyFirstAbpReactApp --backend-path backend/MultiLayerAbp
 ```
+This creates the app, sets `.env` with the backend API URL, and configures the backend CORS so the React app can call the API. No manual configuration needed.
 
 **3. Enter the new app folder**
 ```powershell
@@ -45,24 +46,30 @@ In your browser go to: **http://localhost:8080**
 
 ---
 
-## Short version (default layout)
+## Short version (ready to connect to backend)
 
 From the solution root:
 
 ```powershell
 cd D:\github\alper\abp-thin-ui
-dotnet run --project ui-scaffolding-generator-cli -- init MyFirstAbpReactApp
+dotnet run --project ui-scaffolding-generator-cli -- init MyFirstAbpReactApp --backend-path backend/MultiLayerAbp
 cd MyFirstAbpReactApp
 npm install
 npm run dev
 ```
 
+Start your ABP backend (e.g. run `MultiLayerAbp.HttpApi.Host`) so the API is available; the React app is already configured to use it.
+
 ---
 
-## Connect to ABP backend
+## Backend connection (done by CLI when using `--backend-path`)
 
-1. Copy `.env.example` to `.env` in your app folder.
-2. Set `VITE_ABP_API_URL` to your HttpApi.Host URL (e.g. `https://localhost:44317`).
+When you run `init` with `--backend-path backend/MultiLayerAbp`, the CLI:
+
+1. Creates `.env` in the new app with `VITE_ABP_API_URL` from the backend’s appsettings (or default `https://localhost:44317`).
+2. Updates the backend’s `appsettings.Development.json` with `App:CorsOrigins` and `App:RedirectAllowedUrls` for `http://localhost:8080` and `http://localhost:5173`.
+
+If you create the app without `--backend-path`, copy `.env.example` to `.env` and set `VITE_ABP_API_URL`, and add CORS in the backend manually.
 
 ## Project structure
 

@@ -12,19 +12,27 @@ Template transformer CLI for the ABP Thin UI base template (Vite + React). Built
 From the repository root (so the default template path `ui-base-templates/react` exists):
 
 ```bash
-# Create a new app from the base template
-dotnet run --project ui-scaffolding-generator-cli -- init new-app
+# Create a new app and connect it to your ABP backend (recommended)
+dotnet run --project ui-scaffolding-generator-cli -- init MyFirstAbpReactApp --backend-path backend/MultiLayerAbp
 
-# Change layout and branding (run from the new project folder)
-cd new-app
-dotnet run --project ../ui-scaffolding-generator-cli -- transform --layout=topnav --primary=#22c55e
+# The CLI will: copy the template, create .env with the backend API URL, and update the backend CORS for the React dev server.
 ```
 
-Or from any directory, specify paths:
+Init options:
+
+| Option | Description |
+|--------|-------------|
+| `--backend-path <path>` | Path to your ABP backend (solution folder or HttpApi.Host project). The CLI reads the API URL from appsettings.json and updates appsettings.Development.json with CORS for the React app. |
+| `--api-url <url>` | Override API URL in .env (default: https://localhost:44317, or from backend if --backend-path is set). |
+| `--template-path <path>` | Base template folder (default: ui-base-templates/react relative to current directory). |
 
 ```bash
-dotnet run --project ui-scaffolding-generator-cli -- init ./my-app --template-path /path/to/ui-base-templates/react
-dotnet run --project ui-scaffolding-generator-cli -- transform --project ./my-app --layout=topnav
+# Create app only (no backend connection)
+dotnet run --project ui-scaffolding-generator-cli -- init new-app
+
+# Change layout or branding (run from the new project folder)
+cd new-app
+dotnet run --project ../ui-scaffolding-generator-cli -- transform --layout=topnav --primary=#22c55e
 ```
 
 ## Transform options

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("abp-ui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1564dc2d47dd0cb0c93ac2ba34e4b2c295641b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+707a79317441fe53206edbdb5f08b53795fcc4e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("abp-ui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("abp-ui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

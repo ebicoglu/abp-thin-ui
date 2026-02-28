@@ -9,4 +9,10 @@ public sealed class InitSettings : CommandSettings
 
     [CommandOption("--template-path <path>")]
     public string? TemplatePath { get; init; }
+
+    [CommandOption("--api-url <url>")]
+    public string? ApiUrl { get; init; }
+
+    [CommandOption("--backend-path <path>")]
+    public string? BackendPath { get; init; }
 }
