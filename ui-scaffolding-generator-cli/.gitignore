@@ -1,0 +1,12 @@
+# .NET build and tooling
+bin/
+obj/
+out/
+*.user
+*.suo
+.vs/
+*.DotSettings.user
+
+# Rider / JetBrains
+.idea/
+*.sln.iml

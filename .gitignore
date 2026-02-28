@@ -1,0 +1,69 @@
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE / editors
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+
+# .NET (CLI and backend)
+**/bin/
+**/obj/
+**/out/
+*.userprefs
+*.pidb
+*.ncb
+*.opensdf
+*.sdf
+packages/
+*.nupkg
+*.nuget.props
+*.nuget.targets
+.vs/
+**/Logs/
+**/logs/
+
+# Node / frontend (all apps and base template)
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.local
+.env.*.local
+coverage/
+.npm
+.eslintcache
+*.tsbuildinfo
+
+# Logs and debug
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Secrets and local config
+*.pfx
+.env
+appsettings.*.local.json
+**/appsettings.Development.local.json
+
+# Build and tooling
+.cache/
+.parcel-cache/
+.turbo/
+.next/
+.vercel/
+
+# Optional: Cursor / AI
+.cursor/
